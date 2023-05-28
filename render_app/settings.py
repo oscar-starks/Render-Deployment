@@ -87,7 +87,7 @@ DATABASES = {
     }
 }
 '''
-POSTGRES_URL = env("POSTGRES_URL")
+POSTGRES_URL = env("DATABASE_URL")
 DATABASES = {
     'default': dj_database_url.parse(POSTGRES_URL)
 }
