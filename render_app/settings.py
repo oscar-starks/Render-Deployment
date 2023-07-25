@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-import environ, dj_database_url
+import environ, dj_database_url, os
 
 env = environ.Env()
 environ.Env.read_env()
@@ -24,7 +24,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env("SECRET_KEY")
+# SECRET_KEY = env("SECRET_KEY")
+SECRET_KEY="JSNFGUIO34OIT5JQ0934JT0IJTGERJH0GWRHGRJFGSRJFGNUIQREHGUIRBDFGVJIN"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -87,10 +88,10 @@ DATABASES = {
     }
 }
 '''
-POSTGRES_URL = env("DATABASE_URL")
-DATABASES = {
-    'default': dj_database_url.parse(POSTGRES_URL)
-}
+# POSTGRES_URL = env("DATABASE_URL")
+# DATABASES = {
+#     'default': dj_database_url.parse(POSTGRES_URL)
+# }
 
 
 # Password validation
@@ -128,6 +129,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
