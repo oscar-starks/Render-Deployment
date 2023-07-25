@@ -31,6 +31,8 @@ SECRET_KEY="JSNFGUIO34OIT5JQ0934JT0IJTGERJH0GWRHGRJFGSRJFGNUIQREHGUIRBDFGVJIN"
 DEBUG = True
 
 ALLOWED_HOSTS = ["render-deployment-production.up.railway.app", "localhost"]
+CSRF_TRUSTED_ORIGINS = ["render-deployment-production.up.railway.app"]
+
 
 
 # Application definition
