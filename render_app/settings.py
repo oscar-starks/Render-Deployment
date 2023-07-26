@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY="JSNFGUIO34OIT5JQ0934JT0IJTGERJH0GWRHGRJFGSRJFGNUIQREHGUIRBDFGVJIN"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["render-deployment-production.up.railway.app", "https://render-deployment-production.up.railway.app", "localhost"]
 CSRF_TRUSTED_ORIGINS = [ "https://render-deployment-production.up.railway.app"]
@@ -95,10 +95,10 @@ DATABASES = {
     }
 }
 '''
-# POSTGRES_URL = env("DATABASE_URL")
-# DATABASES = {
-#     'default': dj_database_url.parse(POSTGRES_URL)
-# }
+POSTGRES_URL = env("DATABASE_URL")
+DATABASES = {
+    'default': dj_database_url.parse(POSTGRES_URL)
+}
 
 
 # Password validation
