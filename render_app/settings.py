@@ -31,7 +31,7 @@ SECRET_KEY="JSNFGUIO34OIT5JQ0934JT0IJTGERJH0GWRHGRJFGSRJFGNUIQREHGUIRBDFGVJIN"
 DEBUG = False
 
 ALLOWED_HOSTS = ["render-deployment-production.up.railway.app", "https://render-deployment-production.up.railway.app", "localhost"]
-CSRF_TRUSTED_ORIGINS = [ "https://render-deployment-production.up.railway.app"]
+CSRF_TRUSTED_ORIGINS = [ "https://render-deployment-production.up.railway.app", "http://localhost"]
 
 
 
@@ -95,10 +95,10 @@ DATABASES = {
     }
 }
 '''
-POSTGRES_URL = env("DATABASE_URL")
-DATABASES = {
-    'default': dj_database_url.parse(POSTGRES_URL)
-}
+# POSTGRES_URL = env("DATABASE_URL")
+# DATABASES = {
+#     'default': dj_database_url.parse(POSTGRES_URL)
+# }
 
 
 # Password validation
@@ -134,6 +134,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
+
 
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
